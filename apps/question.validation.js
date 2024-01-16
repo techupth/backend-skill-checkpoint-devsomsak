@@ -1,9 +1,9 @@
 export const validateData = (req, res, next) => {
   const body = req.body;
 
-  if (body.comment.length > 300) {
+  if (body.answer.length > 300) {
     return res.status(400).json({
-      message: "Comment must not be over 300 characters",
+      message: "Answer must not be over 300 characters",
     });
   }
   // if (body.description.length > 150) {

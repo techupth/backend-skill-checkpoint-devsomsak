@@ -26,6 +26,7 @@ questionRouter.get("/", async (req, res) => {
       description: 1,
       category: 1,
       released: 1,
+      answer: 1,
       comment: 1,
     };
     const allQuestion = await collection
@@ -93,6 +94,8 @@ questionRouter.put("/:questId", validateData, async (req, res) => {
     );
     return res.json({
       message: `Question record ${questionId} has been updated successfully`,
+      data: newQuestionData,
+      status: 200,
     });
   } catch (error) {
     return res.json({

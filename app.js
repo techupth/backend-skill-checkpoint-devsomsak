@@ -8,12 +8,13 @@ const init = async () => {
   try {
     const app = express();
     const port = 4008;
+    // ***don't move use express first
     app.use(express.json());
     app.use(express.urlencoded({ extended: false }));
 
     //connect Database
     await dbClient.connect();
-    console.log(dbClient);
+
     app.use(cors());
     //use questionRouter
     app.use("/questions", questionRouter);
